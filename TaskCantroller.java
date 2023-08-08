@@ -33,9 +33,9 @@ public class TaskCantroller {
     @PutMapping("/updet/Status/{index}")
     public ApiResponse updetStatus(@PathVariable int index){
         for (Task task: tasks) {
-            if (task.getStatus().equals("done")) {
+            if (tasks.get(index).getStatus().equals("done")) {
                 task.setStatus("not done");
-            }else task.setStatus("done");
+            }else { task.setStatus("done");}
         }
         return  new ApiResponse("Change the task status");
     }
